@@ -26,15 +26,19 @@ namespace bot
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Начните со мной беседу");
+			Console.WriteLine("Начните со мной беседу");
 			while (true)
 			{
-				string x = Console.ReadLine();
+				string x = Console.ReadLine ();
 				x = x.ToUpper ();
-				if (x.Contains ("ПРИВЕТ"))
+				if (x.Contains ("ПРИВЕТ") || x.Contains ("ДАРОВА") || x.Contains ("ДОБРОЕ УТРО") ||
+					x.Contains ("ЗДАРОВА") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ДОБРЫЙ ДЕНЬ") ||
+					x.Contains ("ДОБРЫЙ ВЕЧЕР") || x.Contains ("ДОБРОЙ НОЧИ") || x.Contains ("ЗИГ ХАЙЛЬ")
+					|| x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ"))
 					Console.WriteLine ("Здравствуй!");
+				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ"))
+					Console.WriteLine ("Хорошо, а ты?");
 			}
-
 		}
 	}
 }
