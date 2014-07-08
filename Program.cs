@@ -31,7 +31,8 @@ namespace bot
 			{
 				string x = Console.ReadLine();
 				x = x.ToUpper ();
-				if (x.Contains("ПРИВЕТ") ||)
+				if (x.Contains ("ПРИВЕТ"))
+					Console.WriteLine ("Здравствуй!");
 			}
 
 		}
