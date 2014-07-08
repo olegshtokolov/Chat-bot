@@ -36,7 +36,7 @@ namespace bot
 					x.Contains ("ДОБРЫЙ ВЕЧЕР") || x.Contains ("ДОБРОЙ НОЧИ") || x.Contains ("ЗИГ ХАЙЛЬ")
 					|| x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ"))
 					Console.WriteLine ("Здравствуй!");
-				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ"))
+				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ")|| x.Contains ("КАК ОНО"))
 					Console.WriteLine ("Хорошо, а ты?");
 			}
 		}
