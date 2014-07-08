@@ -28,14 +28,25 @@ namespace bot
 		{
 			Console.WriteLine("Начните со мной беседу");
 			while (true)
-			{
+			{	Random rnd = new Random ();
 				string x = Console.ReadLine ();
 				x = x.ToUpper ();
 				if (x.Contains ("ПРИВЕТ") || x.Contains ("ДАРОВА") || x.Contains ("ДОБРОЕ УТРО") ||
 					x.Contains ("ЗДАРОВА") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ДОБРЫЙ ДЕНЬ") ||
 					x.Contains ("ДОБРЫЙ ВЕЧЕР") || x.Contains ("ДОБРОЙ НОЧИ") || x.Contains ("ЗИГ ХАЙЛЬ")
-					|| x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ"))
-					Console.WriteLine ("Здравствуй!");
+				    || x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ") || x.Contains ("ЗДРАВСТВУЙ"))
+				{
+					if (rnd.Next() % 5 == 0)
+						Console.WriteLine ("Здравствуй!");
+					if (rnd.Next() % 5 == 1)
+						Console.WriteLine ("Приветики!");
+					if (rnd.Next() % 5 == 2)
+						Console.WriteLine ("Доброго времени суток, друг!");
+					if (rnd.Next() % 5 == 3)
+						Console.WriteLine ("Aloha!");
+					if (rnd.Next() % 5 == 4)
+						Console.WriteLine ("Привет!");
+				}
 				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ")|| x.Contains ("КАК ОНО"))
 					Console.WriteLine ("Хорошо, а ты?");
 			}
