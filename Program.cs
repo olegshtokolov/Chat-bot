@@ -44,7 +44,7 @@ namespace bot
 					}
 				}
 			
-				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ") || x.Contains ("КАК ОНО"))
+				if (x.Contains ("КАК ДЕЛА?") || x.Contains ("КАК ТЫ?") || x.Contains ("КАК САМ?") || x.Contains ("КАК ОНО?"))
 				{
 					q = rnd.Next () % 4;
 					switch (q)
@@ -62,6 +62,24 @@ namespace bot
 							Console.WriteLine ("Отлично!");
 							break;
 					}
+				}
+
+				if (x [0] == 'я' || x [0] == 'Я')
+					q = rnd.Next () % 4;
+				switch (q)
+				{
+					case (0):
+					Console.WriteLine ("Я тоже.");
+					break;
+					case (1):
+					Console.WriteLine ("Фу, ты упал в моих глазах.");
+					break;
+					case (2):
+					Console.WriteLine ("Это всё, конечно, хорошо, но давай вспомним о том, что Аркадий дно, а Клоров петух.");
+					break;
+					case (3):
+					Console.WriteLine ("Ничего себе!");
+					break;
 				}
 			}
 		}
