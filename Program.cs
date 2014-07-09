@@ -7,8 +7,8 @@ namespace bot
 	{
 		public static void Main (string[] args)
 		{
-			List <string> a = new List<string> ();
-			int i = 0;
+			//List <string> a = new List<string> ();
+			//int i = 0;
 			int q = 0;
 			Console.WriteLine ("Начните со мной беседу");
 			while (true)
