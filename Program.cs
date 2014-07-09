@@ -1,24 +1,5 @@
-//
-//  Program.cs
-//
-//  Author:
-//       student <>
-//
-//  Copyright (c) 2014 student
-//
-//  This program is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  This program is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Collections.Generic;
 
 namespace bot
 {
@@ -26,29 +7,62 @@ namespace bot
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine("Начните со мной беседу");
+			List <string> a = new List<string> ();
+			int i = 0;
+			int q = 0;
+			Console.WriteLine ("Начните со мной беседу");
 			while (true)
-			{	Random rnd = new Random ();
+			{
+				Random rnd = new Random ();
 				string x = Console.ReadLine ();
+				//	i = System.Array.IndexOf(a, x);
+				////	if (i == -1) 
+				//	Console.WriteLine ("Мы же уже говорили об этом.");
+				//else
+				//	a.Add (x);
 				x = x.ToUpper ();
 				if (x.Contains ("ПРИВЕТ") || x.Contains ("ДАРОВА") || x.Contains ("ДОБРОЕ УТРО") ||
 					x.Contains ("ЗДАРОВА") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ДОБРЫЙ ДЕНЬ") ||
 					x.Contains ("ДОБРЫЙ ВЕЧЕР") || x.Contains ("ДОБРОЙ НОЧИ") || x.Contains ("ЗИГ ХАЙЛЬ")
-				    || x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ЙОУ"))
+					|| x.Contains ("ПРИВЕТОСЫ") || x.Contains ("ХАЙ") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ЙОУ"))
 				{
-					if (rnd.Next() % 5 == 0)
-						Console.WriteLine ("Здравствуй!");
-					if (rnd.Next() % 5 == 1)
-						Console.WriteLine ("Приветики!");
-					if (rnd.Next() % 5 == 2)
-						Console.WriteLine ("Доброго времени суток, друг!");
-					if (rnd.Next() % 5 == 3)
-						Console.WriteLine ("Aloha!");
-					if (rnd.Next() % 5 == 4)
-						Console.WriteLine ("Привет!");
+					q = rnd.Next (1, 5) % 4;
+					switch (q)
+					{
+						case (0):
+							Console.WriteLine ("Привет!");
+							break;
+						case (1):
+							Console.WriteLine ("Здравствуй");
+							break;
+						case (2):
+							Console.WriteLine ("Оооо, привет! Давно не виделись.");
+							break;
+						case (3):
+							Console.WriteLine ("Доброго времени суток, друг.");
+							break;
+					}
 				}
-				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ")|| x.Contains ("КАК ОНО"))
-					Console.WriteLine ("Хорошо, а ты?");
+			
+				if (x.Contains ("КАК ДЕЛА") || x.Contains ("КАК ТЫ") || x.Contains ("КАК САМ") || x.Contains ("КАК ОНО"))
+				{
+					q = rnd.Next () % 4;
+					switch (q)
+					{
+						case (0):
+							Console.WriteLine ("Нормально, спасибо, твои как?");
+							break;
+						case (1):
+							Console.WriteLine ("Лучше всех!");
+							break;
+						case (2):
+							Console.WriteLine ("Хорошо, а у тебя?");
+							break;
+						case (3):
+							Console.WriteLine ("Отлично!");
+							break;
+					}
+				}
 			}
 		}
 	}
