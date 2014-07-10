@@ -6,21 +6,37 @@ namespace bot
 	class MainClass
 	{
 		public static void Main (string[] args)
-		{
-			//List <string> a = new List<string> ();
-			//int i = 0;
+		{	List<string> iL = new List<string> ();
+			Random rnd = new Random ();
 			int q = 0;
 			Console.WriteLine ("Начните со мной беседу");
 			while (true)
 			{
-				Random rnd = new Random ();
 				string x = Console.ReadLine ();
-				//	i = System.Array.IndexOf(a, x);
-				////	if (i == -1) 
-				//	Console.WriteLine ("Мы же уже говорили об этом.");
-				//else
-				//	a.Add (x);
 				x = x.ToUpper ();
+				if (iL.Contains (x))
+				{
+					q = rnd.Next () % 4;
+					switch (q)
+					{
+						case (0):
+							Console.WriteLine ("Мы же уже говорили об этом. Ты что, забыл?");
+							break;
+							case (1):
+							Console.WriteLine ("У меня ощущения deja vu.");
+							break;
+							case (2):
+							Console.WriteLine ("Что-то ты повторяешься, друже.");
+							break;
+							case (3):
+							Console.WriteLine ("По-моему мы это обсуждали ранее.");
+							break;
+					}
+					continue;
+				}	
+				else
+					iL.Add (x);
+
 				if (x.Contains ("ПРИВЕТ") || x.Contains ("ДАРОВА") || x.Contains ("ДОБРОЕ УТРО") ||
 					x.Contains ("ЗДАРОВА") || x.Contains ("ЗДРАВСТВУЙ") || x.Contains ("ДОБРЫЙ ДЕНЬ") ||
 					x.Contains ("ДОБРЫЙ ВЕЧЕР") || x.Contains ("ДОБРОЙ НОЧИ") || x.Contains ("ЗИГ ХАЙЛЬ")
@@ -42,6 +58,7 @@ namespace bot
 							Console.WriteLine ("Доброго времени суток, друг.");
 							break;
 					}
+					continue;
 				}
 			
 				if (x.Contains ("КАК ДЕЛА?") || x.Contains ("КАК ТЫ?") || x.Contains ("КАК САМ?") || x.Contains ("КАК ОНО?"))
@@ -62,25 +79,25 @@ namespace bot
 							Console.WriteLine ("Отлично!");
 							break;
 					}
+					continue;
 				}
 
-				if (x [0] == 'я' || x [0] == 'Я')
-					q = rnd.Next () % 4;
+				q = rnd.Next () % 4;
 				switch (q)
 				{
 					case (0):
-					Console.WriteLine ("Я тоже.");
-					break;
+						Console.WriteLine ("Я разделяю твою точку зрения.");
+						break;
 					case (1):
-					Console.WriteLine ("Фу, ты упал в моих глазах.");
-					break;
+						Console.WriteLine ("Фу, ты упал в моих глазах.");
+						break;
 					case (2):
-					Console.WriteLine ("Это всё, конечно, хорошо, но давай вспомним о том, что Аркадий дно, а Клоров петух.");
-					break;
+						Console.WriteLine ("Да, твоя позиция мне ясна.");
+						break;
 					case (3):
-					Console.WriteLine ("Ничего себе!");
-					break;
-				}
+						Console.WriteLine ("Ничего себе!");
+						break;
+				} continue;
 			}
 		}
 	}
