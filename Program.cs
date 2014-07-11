@@ -6,7 +6,8 @@ namespace bot
 	class MainClass
 	{
 		public static void Main (string[] args)
-		{	List<string> iL = new List<string> ();
+		{
+			List<string> iL = new List<string> ();
 			Random rnd = new Random ();
 			int q = 0;
 			Console.WriteLine ("Начните со мной беседу");
@@ -22,18 +23,18 @@ namespace bot
 						case (0):
 							Console.WriteLine ("Мы же уже говорили об этом. Ты что, забыл?");
 							break;
-							case (1):
+						case (1):
 							Console.WriteLine ("У меня ощущения deja vu.");
 							break;
-							case (2):
+						case (2):
 							Console.WriteLine ("Что-то ты повторяешься, друже.");
 							break;
-							case (3):
+						case (3):
 							Console.WriteLine ("По-моему мы это обсуждали ранее.");
 							break;
 					}
 					continue;
-				}	
+				}
 				else
 					iL.Add (x);
 
@@ -62,8 +63,8 @@ namespace bot
 				}
 
 				if (x.Contains ("КАК ТЕБЯ ЗОВУТ") || x.Contains ("ТВОЁ ИМЯ") || x.Contains ("ТВОЕ ИМЯ") ||
-				    x.Contains ("К ТЕБЕ ОБРАЩАТЬСЯ") || x.Contains ("У ТЕБЯ ЕСТЬ ИМЯ") || x.Contains ("ТЫ КТО?") ||
-				    x.Contains ("ПРЕДСТАВЬСЯ") || x.Contains ("НАЗОВИ СВОЁ ИМЯ") || x.Contains ("НАЗОВИ СВОЕ ИМЯ"))
+					x.Contains ("К ТЕБЕ ОБРАЩАТЬСЯ") || x.Contains ("У ТЕБЯ ЕСТЬ ИМЯ") || x.Contains ("ТЫ КТО?") ||
+					x.Contains ("ПРЕДСТАВЬСЯ") || x.Contains ("НАЗОВИ СВОЁ ИМЯ") || x.Contains ("НАЗОВИ СВОЕ ИМЯ"))
 				{
 					q = rnd.Next (1, 5) % 4;
 					switch (q)
@@ -71,13 +72,13 @@ namespace bot
 						case (0):
 							Console.WriteLine ("Я - бот Геннадий.");
 							break;
-							case (1):
+						case (1):
 							Console.WriteLine ("Геннадий, можно просто Гена.");
 							break;
-							case (2):
+						case (2):
 							Console.WriteLine ("Геннадий. А какое имя у тебя?");
 							break;
-							case (3):
+						case (3):
 							Console.WriteLine ("Как говорил американец по имени Геннадий, май нэйм ис Геннадий.");
 							break;
 					}
@@ -86,8 +87,8 @@ namespace bot
 
 				
 				if (x.Contains ("ГЕНА") || x.Contains ("ГЕННАДИЙ") || x.Contains ("ГЕННАША") ||
-				    x.Contains ("ГЕНУЛЯ") || x.Contains ("ГЕНУСЯ") || x.Contains ("ГЕНУХА") ||
-				    x.Contains ("ГЕНЯ") || x.Contains ("ГЕНЮША") || x.Contains ("ГЕНУША") || x.Contains ("ГЕША"))
+					x.Contains ("ГЕНУЛЯ") || x.Contains ("ГЕНУСЯ") || x.Contains ("ГЕНУХА") ||
+					x.Contains ("ГЕНЯ") || x.Contains ("ГЕНЮША") || x.Contains ("ГЕНУША") || x.Contains ("ГЕША"))
 				{
 					q = rnd.Next (1, 5) % 4;
 					switch (q)
@@ -95,13 +96,13 @@ namespace bot
 						case (0):
 							Console.WriteLine ("Да-да?");
 							break;
-							case (1):
+						case (1):
 							Console.WriteLine ("Что?");
 							break;
-							case (2):
+						case (2):
 							Console.WriteLine ("Я тебя слушаю.");
 							break;
-							case (3):
+						case (3):
 							Console.WriteLine ("Говори.");
 							break;
 					}
@@ -144,7 +145,8 @@ namespace bot
 					case (3):
 						Console.WriteLine ("Ничего себе!");
 						break;
-				} continue;
+				}
+				continue;
 			}
 		}
 	}
