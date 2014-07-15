@@ -10,29 +10,50 @@ namespace bot
 			List<string> iL = new List<string> ();
 			Random rnd = new Random ();
 			int q = 0;
-			int mood = rnd.Next (1, 11);
+			int mood = int.Parse (Console.ReadLine ());//rnd.Next (1, 11);
 			Console.WriteLine ("Начните со мной беседу");
 			while (true)
 			{
 				string x = Console.ReadLine ();
 				x = x.ToUpper ();
 				if (iL.Contains (x))
-				{	
-					q = rnd.Next () % 4;
-					switch (q)
+				{	if (mood>5)
 					{
-						case (0):
-							Console.WriteLine ("Мы же уже говорили об этом. Ты что, забыл?");
-							break;
-						case (1):
-							Console.WriteLine ("У меня ощущения deja vu.");
-							break;
-						case (2):
-							Console.WriteLine ("Что-то ты повторяешься, друже.");
-							break;
-						case (3):
-							Console.WriteLine ("По-моему мы это обсуждали ранее.");
-							break;
+						q = rnd.Next () % 4;
+						switch (q)
+						{
+							case (0):
+								Console.WriteLine ("Мы же уже говорили об этом. Ты что, забыл?");
+								break;
+							case (1):
+								Console.WriteLine ("У меня ощущения deja vu.");
+								break;
+							case (2):
+								Console.WriteLine ("Что-то ты повторяешься, друже.");
+								break;
+							case (3):
+								Console.WriteLine ("По-моему мы это обсуждали ранее.");
+								break;
+						}
+					}
+					else
+					{
+						q = rnd.Next () % 4;
+						switch (q)
+						{
+							case (0):
+								Console.WriteLine ("Хватит повторяться, надоел.");
+								break;
+							case (1):
+								Console.WriteLine ("Ага, ага. Ещё раз скажи.");
+								break;
+							case (2):
+								Console.WriteLine ("В чём твоя проблема? Мы это уже обсудили.");
+								break;
+							case (3):
+								Console.WriteLine ("Я не хочу снова к этому возвращаться.");
+								break;
+						}
 					}
 					continue;
 				}
@@ -110,9 +131,9 @@ namespace bot
 					continue;
 				}
 			
-				if (x.Contains ("КАК ДЕЛА?") || x.Contains ("КАК ТЫ?") || x.Contains ("КАК САМ?") || x.Contains ("КАК ОНО?"))
-				{
-					q = rnd.Next () % 4;
+					if (x.Contains ("КАК ДЕЛА?") || x.Contains ("КАК ТЫ?") || x.Contains ("КАК САМ?") || x.Contains ("КАК ОНО?"))
+					{
+						q = rnd.Next () % 4;
 					switch (q)
 					{
 						case (0):
@@ -149,6 +170,5 @@ namespace bot
 				}
 				continue;
 			}
-		}
-	}
+		}	}
 }
