@@ -6,17 +6,18 @@ namespace bot
 	class MainClass
 	{
 		public static void Main (string[] args)
-		{
+		{	
 			List<string> iL = new List<string> ();
 			Random rnd = new Random ();
 			int q = 0;
+			int mood = rnd.Next (1, 11);
 			Console.WriteLine ("Начните со мной беседу");
 			while (true)
 			{
 				string x = Console.ReadLine ();
 				x = x.ToUpper ();
 				if (iL.Contains (x))
-				{
+				{	
 					q = rnd.Next () % 4;
 					switch (q)
 					{
